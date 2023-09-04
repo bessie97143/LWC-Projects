@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="LMS-Marketing Cloud" >
+        <lightning-button 
+            variant={subscribeButtonBrand} 
+            label={subscribeButtonLabel} 
+            slot="actions" 
+            name="Subscribe"
+            onclick={handleSubscribe}>
+        </lightning-button>
+        <div class="slds-p-around_medium">
+            <lightning-checkbox-group name="Subscription Channels" label="Subscription Channels" options={options}
+                value={optValues} onchange={handleChange}>
+            </lightning-checkbox-group>
+            <p><b>Selected Channels are:</b> {selectedChannelValues}</p>
+            <p><b>Last Message Received:</b> {receivedMessage}</p>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input 
+                    type="text" 
+                    label="Enter Marketing Message"
+                    value={msgToPubish}
+                    onchange={setMsg}>
+                </lightning-input>
+            <lightning-button
+                    variant="brand"
+                    type="submit"
+                    label="Publish"
+                    class="slds-align_absolute-center" 
+                    style="height:5rem"
+                    onclick={handlePublish}>
+                </lightning-button>
+        </div>
+    </lightning-card>
+</template>
